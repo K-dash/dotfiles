@@ -1,0 +1,99 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+shift+[Minus]",
+        "command": "workbench.action.navigateForward"
+    },
+    {
+        "key": "ctrl+[IntlRo]",
+        "command": "-workbench.action.navigateForward"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.previousEditor"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.nextEditor"
+    },
+    //----------------------------------------------------------
+    // 画面移動系
+    //----------------------------------------------------------
+    // サイドバーへの移動 (ctrl+hをhにしてctrlを話すだけで切り替わる)
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.focusSideBar",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "!editorFocus"
+    },
+    // 左右にファイルを開いた時の切り替え
+    {
+        "key": "ctrl+;",
+        "command": "workbench.action.focusPreviousGroup",
+        "when": "editorFocus"
+    },
+    // サイドバーへ移動（debug画面）
+    {
+        "key": "ctrl+o ctrl+d",
+        "command": "workbench.view.debug"
+    },
+    {
+        "key": "ctrl+o d",
+        "command": "workbench.view.debug"
+    },
+    // サイドバーへ移動（Git画面）
+    {
+        "key": "ctrl+o ctrl+g",
+        "command": "workbench.view.scm"
+    },
+    {
+        "key": "ctrl+o g",
+        "command": "workbench.view.scm"
+    },
+    // ターミナル切り替え
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "!terminalFocus && vim.mode != 'SearchInProgressMode'"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminalFocus && vim.mode != 'SearchInProgressMode'"
+    },
+    // エディター以外のビューから抜けてくるときに
+    // {
+    //     "key": "ctrl+w",
+    //     "command": "workbench.action.focusActiveEditorGroup"
+    // },
+    // サイドバーの表示切り替え
+    {
+        "key": "ctrl+b",
+        "command": "workbench.view.explorer",
+        "when": "!explorerViewletVisible && vim.mode != 'SearchInProgressMode'"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "explorerViewletVisible && !searchViewletVisible && !inDebugMode && vim.mode != 'SearchInProgressMode'"
+    },
+    // マルチカーソル(bracketleft=@)
+    {
+        "key": "ctrl+[BracketLeft]",
+        "command": "editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "cmd+d",
+        "command": "-editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+f10",
+        "command": "workbench.action.toggleAutoSave"
+    },
+]

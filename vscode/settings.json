@@ -1,0 +1,424 @@
+{
+  // ====================================
+  // vim
+  // ====================================
+  // ノーマルモード
+  // jjでNormalモードへ遷移
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  // x,sはヤンクしない
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["J"],
+      "after": ["1", "0", "j"]
+    }, //移動を早める
+    {
+      "before": ["K"],
+      "after": ["1", "0", "k"]
+    }, //移動を早める
+    {
+      "before": ["<leader>", "h"],
+      "after": ["<C-w>", "h"]
+    }, //window移動
+    {
+      "before": ["<leader>", "j"],
+      "after": ["<C-w>", "j"]
+    }, //window移動
+    {
+      "before": ["<leader>", "k"],
+      "after": ["<C-w>", "k"]
+    }, //window移動
+    {
+      "before": ["<leader>", "l"],
+      "after": ["<C-w>", "l"]
+    }, //window移動
+    {
+      "before": ["<leader>", "q"],
+      "commands": [":q!"]
+    }, //tabを閉じる
+    {
+      "before": ["<leader>", "o"],
+      "after": ["o", "<ESC>"]
+    }, //空の行を挿入
+    {
+      "before": ["<leader>", "O"],
+      "after": ["O", "<ESC>"]
+    }, //空の行を挿入
+    {
+      "before": ["<leader>", "d"],
+      "commands": ["editor.action.goToDeclaration"]
+    },
+    {
+      "before": ["<leader>", "b"],
+      "commands": ["workbench.action.navigateBack"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["workbench.action.navigateForward"]
+    },
+    {
+      // moveLineDown
+      "before": ["<leader>", "j"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    }, 
+    {
+      // moveLineUp
+      "before": ["<leader>", "k"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    }, 
+    {
+      "before": ["x"],
+      "after": ["\"", "_", "x"]
+    },
+    {
+      "before": ["s"],
+      "after": ["\"", "_", "s"]
+    },
+    //vim-easy-motion
+    {
+      "before": ["f"],
+      "after": ["leader", "leader", "leader", "b", "d", "w"]
+    },
+    {
+      "before": ["u"],
+      "commands": [
+        {
+          "command": "undo"
+        }
+      ]
+    },
+    {
+      "before": ["<C-r>"],
+      "commands": [
+        {
+          "command": "redo"
+        }
+      ]
+    },
+    {
+      "before": ["Y"],
+      "after": ["y", "$"]
+    },
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    // 検索した時にカーソルを中央に移動
+    {
+      "before": ["n"],
+      "after": ["n", "z", "z"]
+    },
+    {
+      "before": ["N"],
+      "after": ["N", "z", "z"]
+    },
+    {
+      "before": ["*"],
+      "after": ["*", "z", "z"]
+    },
+    {
+      "before": ["#"],
+      "after": ["#", "z", "z"]
+    }
+  ],
+  // ビジュアルモード設定
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["J"],
+      "after": ["1", "0", "j"]
+    }, //移動を早める
+    {
+      "before": ["v", "J"],
+      "after": ["1", "0", "j"]
+    }, //移動を早める
+    {
+      "before": ["K"],
+      "after": ["1", "0", "k"]
+    }, //移動を早める
+    {
+      "before": ["v", "K"],
+      "after": ["1", "0", "k"]
+    }, //移動を早める
+    {
+      "before": ["v"],
+      "after": ["a", "f"]
+    }, //拡大選択
+    {
+      "before": ["v", "v"],
+      "after": ["a", "f"]
+    }, //拡大選択
+    {
+      // インデント時にビジュアルモードを保持する
+      "before": [">"],
+      "after": [">", "g", "v"]
+    },
+    {
+      "before": ["<"],
+      "after": ["<", "g", "v"]
+    },
+    {
+      "before": ["Y"],
+      "after": ["y", "$"]
+    },
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    }
+  ],
+  // OS のクリップボードと同期
+  "vim.useSystemClipboard": true,
+  "vim.overrideCopy": true,
+  //easy motion
+  "vim.easymotion": true,
+  "vim.easymotionMarkerForegroundColorOneChar": "rgba(0,240,170,0.9)", //一文字目の色
+  "vim.easymotionMarkerForegroundColorTwoChar": "rgba(0,240,170,0.9)", //二文字目の色
+  "vim.easymotionMarkerBackgroundColor": "", //背景色
+  "vim.easymotionMarkerWidthPerChar": 19, //各文字に割り当てられている幅
+  "vim.easymotionMarkerHeight": 0, //マーカーの高さ
+  "vim.easymotionMarkerFontFamily": "Cica", //フォント
+  "vim.easymotionMarkerFontSize": "12.5", //フォントサイズ
+  "vim.easymotionMarkerFontWeight": "normal", //フォントの太さ
+  "vim.easymotionKeys": "asdfhjklwqeruioopghty;", //マーカーに使用される文字列
+  "vim.easymotionMarkerYOffset": 13.5, //高さのずれ修正
+  "vim.visualstar": true,
+  "vim.hlsearch": true,
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1,
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vim.statusBarColorControl": false,
+  "vim.leader": "<space>",
+  "vim.highlightedyank.enable": true, //yankした箇所をハイライト表示にする
+  "vim.highlightedyank.color": "rgba(0, 240, 170, 0.5)", //yankした時の色
+  "vim.highlightedyank.duration": 200, //yankした時の色の表示時間
+  // ====================================
+  // コード整
+  // ====================================
+  // ファイル保存時、最終行に改行を挿入する
+  "files.insertFinalNewline": true,
+  // 保存時にコードを自動整形する
+  "editor.formatOnSave": true,
+  // black
+  // "python.formatting.provider": "black",
+  // "python.formatting.blackArgs": [
+  //   "--line-length=130"
+  // ],
+  // // flake8
+  // "python.linting.flake8Enabled": true,
+  // "python.linting.enabled": true,
+  // "python.linting.flake8Args": [
+  //   "--max-line-length=130"
+  // ],
+  // // mypy
+  // "python.linting.mypyEnabled": true,
+  // // isort
+  "isort.args": ["--line_length=130"],
+  // "editor.codeActionsOnSave": {
+  //   "source.organizeImports": "explicit"
+  // },
+  // "[json]": {
+  //   "editor.defaultFormatter": "vscode.json-language-features"
+  // },
+  // "[dockerfile]": {
+  //   "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  // },
+  // "[yang]": {
+  //   "editor.defaultFormatter": "typefox.yang-vscode"
+  // },
+  // "[yaml]": {
+  //   "editor.defaultFormatter": "redhat.vscode-yaml"
+  // },
+  // "[shellscript]": {
+  //   "editor.defaultFormatter": "foxundermoon.shell-format"
+  // },
+  // "[ansible]": {
+  //   "editor.defaultFormatter": "redhat.ansible"
+  // },
+  // "[robotframework]": {
+  //   "editor.defaultFormatter": "robocorp.robotframework-lsp"
+  // },
+  // "[html][django-html][handlebars][hbs][mustache][jinja][jinja-html][nj][njk][nunjucks][twig]": {
+  //   "editor.defaultFormatter": "monosans.djlint"
+  // },
+  //autoDocstring
+  "autoDocstring.docstringFormat": "google",
+  // ====================================
+  // エディタ全体のUIに関する設定
+  // ====================================
+  // 現在の行番号含めて強調表示する
+  "editor.renderLineHighlight": "all",
+  // タブサイズ
+  "editor.tabSize": 4,
+  //tabをスペースとして扱う
+  "editor.insertSpaces": true,
+  // 空白を表示する
+  "editor.renderWhitespace": "all",
+  //制御文字の表示
+  "editor.renderControlCharacters": true,
+  // ミニマップは非表示
+  "editor.minimap.enabled": false,
+  // インデントガイドは非表示
+  "editor.guides.indentation": false,
+  // 括弧（ブラケット）のペアガイドを表示する
+  "editor.guides.bracketPairs": false,
+  // 括弧（ブラケット）の水平方向のペアガイドを表示する
+  "editor.guides.bracketPairsHorizontal": true,
+  // 括弧（ブラケット）のペアごとに色を分ける
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  // 選択範囲のハイライトに角丸を適用する
+  "editor.roundedSelection": false,
+  // スムーススクロール
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.stickyScroll.enabled": true,
+  //autoindentを入れる
+  "editor.autoIndent": "full",
+  // ====================================
+  // エディタのタイポグラフィーに関する設定
+  // ====================================
+  // フォント
+  "editor.fontFamily": "'CodeNewRoman Nerd Font', 'PlemolJP35 Console NF', 'PlemolJP Console NF'", //font settings
+  // 文字サイズ
+  "editor.fontSize": 13,
+  // 文字間隔
+  "editor.letterSpacing": -0.3,
+  // 行間
+  "editor.lineHeight": 1.7,
+  // 自動括弧(空白がある場合)
+  "editor.autoClosingBrackets": "beforeWhitespace",
+  "editor.autoClosingQuotes": "beforeWhitespace",
+  // ====================================
+  // ワークベンチの設定
+  // ====================================
+  // アイコンテーマ
+  "workbench.iconTheme": "material-icon-theme",
+  // ツリーのインデント
+  "workbench.tree.indent": 18,
+  // ツリーのインデントガイドを表示する
+  "workbench.tree.renderIndentGuides": "always",
+  // アニメーションを減らす
+  "workbench.reduceMotion": "on",
+  // ====================================
+  // ターミナルの設定
+  // ====================================
+  // ターミナルの文字サイズ
+  "terminal.integrated.fontSize": 14,
+  // ターミナルの行間
+  "terminal.integrated.lineHeight": 1.25,
+  // ターミナルの表示行数
+  "terminal.integrated.scrollback": 100000000,
+  // ====================================
+  // キャレットの設定
+  // ====================================
+  // エディタのキャレットの幅
+  "editor.cursorWidth": 3,
+  // エディタのキャレットアニメーション
+  "editor.cursorBlinking": "phase",
+  // ターミナルのキャレットのスタイル
+  "terminal.integrated.cursorStyle": "block",
+  // ターミナルのキャレットアニメーション
+  "terminal.integrated.cursorBlinking": true,
+  // テーマカラーの配色を上書きする
+  "workbench.colorCustomizations": {
+    "editorIndentGuide.background1": "#b22222",
+    "editorIndentGuide.background2": "#ff4500",
+    "editorIndentGuide.background3": "#ffd700",
+    "editorIndentGuide.background4": "#228b22",
+    "editorIndentGuide.background5": "#000080",
+    "editorIndentGuide.background6": "#8b008b",
+    "editorIndentGuide.activeBackground1": "#fff",
+    "editorIndentGuide.activeBackground2": "#fff",
+    "editorIndentGuide.activeBackground3": "#fff",
+    "editorIndentGuide.activeBackground4": "#fff",
+    "editorIndentGuide.activeBackground5": "#fff",
+    "editorIndentGuide.activeBackground6": "#fff",
+    "terminalCursor.foreground": "#00ffaa"
+  },
+  "indentRainbow.colors": [
+    "rgba( 32,  64, 128, 0.3)", // 青
+    "rgba( 32, 128,  32, 0.3)", // 緑
+    "rgba(128,  64, 128, 0.3)", // 紫
+    "rgba(128,  96,  32, 0.3)", // 橙
+    "rgba(128, 128,  32, 0.3)", // 黄
+    "rgba(128,  64,  64, 0.3)" // 赤
+  ],
+  "editor.bracketPairColorization.enabled": true,
+  // ====================================
+  // デバッグ設定
+  // ====================================
+  // デバッグ中にエディターの行内に変数値を表示します
+  "debug.inlineValues": "on",
+  "editor.inlineSuggest.enabled": true,
+  "git.openRepositoryInParentFolders": "never",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "editor.inlayHints.enabled": "off",
+  "editor.wordWrap": "on",
+  "diffEditor.wordWrap": "off",
+  "redhat.telemetry.enabled": true,
+  "python.terminal.activateEnvironment": false,
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1",
+    "CW_NEW_SESSION": "1",
+    "Q_NEW_SESSION": "1"
+  },
+  "editor.accessibilitySupport": "off",
+  "go.toolsManagement.autoUpdate": true,
+  // ====================================
+  // chatgpt
+  // ====================================
+  "application.shellEnvironmentResolutionTimeout": 15,
+  "editor.largeFileOptimizations": false,
+  "editor.fontLigatures": false,
+  "files.autoSave": "afterDelay",
+  "emmet.triggerExpansionOnTab": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "remote.SSH.remotePlatform": {
+    "sandbox.58s7gh.csb": "linux"
+  },
+  "codesandbox.currentWorkspace": "abf0f8af-c1b0-40c5-ab9c-e28e4b2496b6",
+  "window.zoomLevel": -1,
+  "workbench.editor.empty.hint": "hidden",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.trimAutoWhitespace": false,
+  "git.autofetch": true,
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "cody.commandCodeLenses": true,
+  "files.associations": {
+    ".env*": "dotenv"
+  },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "keyword.other.dotenv",
+        "settings": {
+          "foreground": "#FF000000"
+        }
+      }
+    ]
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "remote.SSH.defaultExtensions": [
+    "gitpod.gitpod-remote-ssh"
+  ]
+}
