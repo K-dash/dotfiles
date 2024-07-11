@@ -6,85 +6,191 @@
   // jjでNormalモードへ遷移
   "vim.insertModeKeyBindings": [
     {
-      "before": ["j", "j"],
-      "after": ["<Esc>"]
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
     }
   ],
   // x,sはヤンクしない
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["J"],
-      "after": ["1", "0", "j"]
+      "before": [
+        "J"
+      ],
+      "after": [
+        "1",
+        "0",
+        "j"
+      ]
     }, //移動を早める
     {
-      "before": ["K"],
-      "after": ["1", "0", "k"]
+      "before": [
+        "K"
+      ],
+      "after": [
+        "1",
+        "0",
+        "k"
+      ]
     }, //移動を早める
     {
-      "before": ["<leader>", "h"],
-      "after": ["<C-w>", "h"]
+      "before": [
+        "<leader>",
+        "h"
+      ],
+      "after": [
+        "<C-w>",
+        "h"
+      ]
     }, //window移動
     {
-      "before": ["<leader>", "j"],
-      "after": ["<C-w>", "j"]
+      "before": [
+        "<leader>",
+        "j"
+      ],
+      "after": [
+        "<C-w>",
+        "j"
+      ]
     }, //window移動
     {
-      "before": ["<leader>", "k"],
-      "after": ["<C-w>", "k"]
+      "before": [
+        "<leader>",
+        "k"
+      ],
+      "after": [
+        "<C-w>",
+        "k"
+      ]
     }, //window移動
     {
-      "before": ["<leader>", "l"],
-      "after": ["<C-w>", "l"]
+      "before": [
+        "<leader>",
+        "l"
+      ],
+      "after": [
+        "<C-w>",
+        "l"
+      ]
     }, //window移動
     {
-      "before": ["<leader>", "q"],
-      "commands": [":q!"]
+      "before": [
+        "<leader>",
+        "q"
+      ],
+      "commands": [
+        ":q!"
+      ]
     }, //tabを閉じる
     {
-      "before": ["<leader>", "o"],
-      "after": ["o", "<ESC>"]
+      "before": [
+        "<leader>",
+        "o"
+      ],
+      "after": [
+        "o",
+        "<ESC>"
+      ]
     }, //空の行を挿入
     {
-      "before": ["<leader>", "O"],
-      "after": ["O", "<ESC>"]
+      "before": [
+        "<leader>",
+        "O"
+      ],
+      "after": [
+        "O",
+        "<ESC>"
+      ]
     }, //空の行を挿入
     {
-      "before": ["<leader>", "d"],
-      "commands": ["editor.action.goToDeclaration"]
+      "before": [
+        "<leader>",
+        "d"
+      ],
+      "commands": [
+        "editor.action.goToDeclaration"
+      ]
     },
     {
-      "before": ["<leader>", "b"],
-      "commands": ["workbench.action.navigateBack"]
+      "before": [
+        "<leader>",
+        "b"
+      ],
+      "commands": [
+        "workbench.action.navigateBack"
+      ]
     },
     {
-      "before": ["<leader>", "f"],
-      "commands": ["workbench.action.navigateForward"]
+      "before": [
+        "<leader>",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.navigateForward"
+      ]
     },
     {
       // moveLineDown
-      "before": ["<leader>", "j"],
-      "commands": ["editor.action.moveLinesDownAction"]
-    }, 
-    {
-      // moveLineUp
-      "before": ["<leader>", "k"],
-      "commands": ["editor.action.moveLinesUpAction"]
-    }, 
-    {
-      "before": ["x"],
-      "after": ["\"", "_", "x"]
+      "before": [
+        "<leader>",
+        "j"
+      ],
+      "commands": [
+        "editor.action.moveLinesDownAction"
+      ]
     },
     {
-      "before": ["s"],
-      "after": ["\"", "_", "s"]
+      // moveLineUp
+      "before": [
+        "<leader>",
+        "k"
+      ],
+      "commands": [
+        "editor.action.moveLinesUpAction"
+      ]
+    },
+    {
+      "before": [
+        "x"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "x"
+      ]
+    },
+    {
+      "before": [
+        "s"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "s"
+      ]
     },
     //vim-easy-motion
     {
-      "before": ["f"],
-      "after": ["leader", "leader", "leader", "b", "d", "w"]
+      "before": [
+        "f"
+      ],
+      "after": [
+        "leader",
+        "leader",
+        "leader",
+        "b",
+        "d",
+        "w"
+      ]
     },
     {
-      "before": ["u"],
+      "before": [
+        "u"
+      ],
       "commands": [
         {
           "command": "undo"
@@ -92,7 +198,9 @@
       ]
     },
     {
-      "before": ["<C-r>"],
+      "before": [
+        "<C-r>"
+      ],
       "commands": [
         {
           "command": "redo"
@@ -100,81 +208,180 @@
       ]
     },
     {
-      "before": ["Y"],
-      "after": ["y", "$"]
+      "before": [
+        "Y"
+      ],
+      "after": [
+        "y",
+        "$"
+      ]
     },
     {
-      "before": ["L"],
-      "after": ["$"]
+      "before": [
+        "L"
+      ],
+      "after": [
+        "$"
+      ]
     },
     {
-      "before": ["H"],
-      "after": ["^"]
+      "before": [
+        "H"
+      ],
+      "after": [
+        "^"
+      ]
     },
     // 検索した時にカーソルを中央に移動
     {
-      "before": ["n"],
-      "after": ["n", "z", "z"]
+      "before": [
+        "n"
+      ],
+      "after": [
+        "n",
+        "z",
+        "z"
+      ]
     },
     {
-      "before": ["N"],
-      "after": ["N", "z", "z"]
+      "before": [
+        "N"
+      ],
+      "after": [
+        "N",
+        "z",
+        "z"
+      ]
     },
     {
-      "before": ["*"],
-      "after": ["*", "z", "z"]
+      "before": [
+        "*"
+      ],
+      "after": [
+        "*",
+        "z",
+        "z"
+      ]
     },
     {
-      "before": ["#"],
-      "after": ["#", "z", "z"]
+      "before": [
+        "#"
+      ],
+      "after": [
+        "#",
+        "z",
+        "z"
+      ]
     }
   ],
   // ビジュアルモード設定
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": ["J"],
-      "after": ["1", "0", "j"]
+      "before": [
+        "J"
+      ],
+      "after": [
+        "1",
+        "0",
+        "j"
+      ]
     }, //移動を早める
     {
-      "before": ["v", "J"],
-      "after": ["1", "0", "j"]
+      "before": [
+        "v",
+        "J"
+      ],
+      "after": [
+        "1",
+        "0",
+        "j"
+      ]
     }, //移動を早める
     {
-      "before": ["K"],
-      "after": ["1", "0", "k"]
+      "before": [
+        "K"
+      ],
+      "after": [
+        "1",
+        "0",
+        "k"
+      ]
     }, //移動を早める
     {
-      "before": ["v", "K"],
-      "after": ["1", "0", "k"]
+      "before": [
+        "v",
+        "K"
+      ],
+      "after": [
+        "1",
+        "0",
+        "k"
+      ]
     }, //移動を早める
     {
-      "before": ["v"],
-      "after": ["a", "f"]
+      "before": [
+        "v"
+      ],
+      "after": [
+        "a",
+        "f"
+      ]
     }, //拡大選択
     {
-      "before": ["v", "v"],
-      "after": ["a", "f"]
+      "before": [
+        "v",
+        "v"
+      ],
+      "after": [
+        "a",
+        "f"
+      ]
     }, //拡大選択
     {
       // インデント時にビジュアルモードを保持する
-      "before": [">"],
-      "after": [">", "g", "v"]
+      "before": [
+        ">"
+      ],
+      "after": [
+        ">",
+        "g",
+        "v"
+      ]
     },
     {
-      "before": ["<"],
-      "after": ["<", "g", "v"]
+      "before": [
+        "<"
+      ],
+      "after": [
+        "<",
+        "g",
+        "v"
+      ]
     },
     {
-      "before": ["Y"],
-      "after": ["y", "$"]
+      "before": [
+        "Y"
+      ],
+      "after": [
+        "y",
+        "$"
+      ]
     },
     {
-      "before": ["L"],
-      "after": ["$"]
+      "before": [
+        "L"
+      ],
+      "after": [
+        "$"
+      ]
     },
     {
-      "before": ["H"],
-      "after": ["^"]
+      "before": [
+        "H"
+      ],
+      "after": [
+        "^"
+      ]
     }
   ],
   // OS のクリップボードと同期
@@ -224,7 +431,9 @@
   // // mypy
   // "python.linting.mypyEnabled": true,
   // // isort
-  "isort.args": ["--line_length=130"],
+  "isort.args": [
+    "--line_length=130"
+  ],
   // "editor.codeActionsOnSave": {
   //   "source.organizeImports": "explicit"
   // },
@@ -252,8 +461,6 @@
   // "[html][django-html][handlebars][hbs][mustache][jinja][jinja-html][nj][njk][nunjucks][twig]": {
   //   "editor.defaultFormatter": "monosans.djlint"
   // },
-  //autoDocstring
-  "autoDocstring.docstringFormat": "google",
   // ====================================
   // エディタ全体のUIに関する設定
   // ====================================
@@ -389,7 +596,8 @@
   },
   "security.workspace.trust.untrustedFiles": "open",
   "remote.SSH.remotePlatform": {
-    "sandbox.58s7gh.csb": "linux"
+    "sandbox.58s7gh.csb": "linux",
+    "*.gitpod.io": "linux"
   },
   "codesandbox.currentWorkspace": "abf0f8af-c1b0-40c5-ab9c-e28e4b2496b6",
   "window.zoomLevel": -1,
@@ -420,5 +628,12 @@
   },
   "remote.SSH.defaultExtensions": [
     "gitpod.gitpod-remote-ssh"
-  ]
+  ],
+  "git.suggestSmartCommit": false,
+  "remote.autoForwardPortsSource": "hybrid",
+  "gitlens.ai.experimental.model": "openai:gpt-4o",
+  "gitlens.graph.layout": "editor",
+  "gitlens.experimental.generateCommitMessagePrompt": "Semantic Commit MessageおよびCommit Message Guidelineに従い、コミットメッセージを作成してください。{{1行目の接頭辞のみ英語、それ以外（変更のサマリと2行目以降の変更内容）は日本語で出力してください。}}",
+  "playwright.showTrace": false,
+  "playwright.reuseBrowser": true
 }

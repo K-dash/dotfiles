@@ -96,4 +96,8 @@
         "key": "ctrl+f10",
         "command": "workbench.action.toggleAutoSave"
     },
+    {
+        "key": "cmd+f7",
+        "command": "gitlens.generateCommitMessage"
+    },
 ]

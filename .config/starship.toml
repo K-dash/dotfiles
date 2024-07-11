@@ -1,28 +1,50 @@
 format = """
-[░▒▓](#a3aed2)\
-[  ](bg:#a3aed2 fg:#090c0c)\
-[](bg:#769ff0 fg:#a3aed2)\
+[](fg:#7aa2f7)\
+$os\
+[ ](fg:#7aa2f7 bg:#1a1b26)\
+$direnv\
 $directory\
-[](fg:#769ff0 bg:#394260)\
 $git_branch\
 $git_status\
-[](fg:#394260 bg:#212736)\
-$nodejs\
-$rust\
-$golang\
-$php\
+$git_metrics\
+[](fg:#1a1b26)\
+$fill\
+[](fg:#1a1b26)\
+$conda\
+[](fg:#9ece6a bg:#1a1b26)\
 $python\
-[](fg:#212736 bg:#1d2230)\
-$time\
-[ ](fg:#1d2230)\
-\n$character"""
+[](fg:#9ece6a)\
+\n$character\
+"""
 
+right_format = """
+$cmd_duration
+$lua
+$rust
+$time
+$golang
+$nodejs
+"""
+
+[os]
+format = "[$symbol]($style)"
+style = 'fg:#1a1b26 bg:#7aa2f7'
+disabled = false
+
+[os.symbols]
+Macos = "  "  # nf-fa-apple
+Ubuntu = "  " # nf-linux-ubuntu
+Debian = "  " # nf-linux-debian
 
 [directory]
-style = "fg:#e3e5e5 bg:#769ff0"
-format = "[ $path ]($style)"
-truncation_length = 3
-truncation_symbol = "…/"
+truncation_length = 6
+truncation_symbol = ' '                                 # nf-fa-folder_open
+truncate_to_repo = false
+home_symbol = ' ~'                                      # nf-costum-home
+style = 'fg:#7aa2f7 bg:#1a1b26'
+read_only = ' 󰌾 '                                        # nf-md-lock
+read_only_style = 'fg:#f7768e bg:#1a1b26'
+format = '[$path]($style)[$read_only]($read_only_style)'
 
 [directory.substitutions]
 "Documents" = "󰈙 "
@@ -30,52 +52,88 @@ truncation_symbol = "…/"
 "Pictures" = " "
 
 [git_branch]
-symbol = ""
-style = "bg:#394260"
-format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
+symbol = '  '                                         # nf-fa-github_alt, nf-fa-code_fork
+truncation_length = 4
+truncation_symbol = ''
+style = 'fg:#7aa2f7 bg:#1a1b26'
+format = '[  $symbol$branch(:$remote_branch)]($style)' # nf-pl-left_soft_divider
 
 [git_status]
-style = "bg:#394260"
-format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
+style = 'fg:#e0af68 bg:#1a1b26'
+conflicted = '='
+ahead = '⇡${count}'
+behind = '⇣${count}'
+diverged = '⇕'
+up_to_date = '✓'
+untracked = '?'
+stashed = '$'
+modified = '!${count}'
+renamed = '»'
+deleted = '✘'
+format = '([\[$all_status$ahead_behind\]]($style))'
 
-[nodejs]
-symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+[git_metrics]
+added_style = 'fg:#9ece6a bg:#1a1b26'
+deleted_style = 'fg:#9ece6a bg:#1a1b26'
+format = '[+$added/-$deleted]($deleted_style)'
+disabled = false
+
+[fill]
+symbol = '─'
+style = 'blue'
+
+[conda]
+symbol = ' '
+style = 'fg:#9ece6a bg:#1a1b26'
+format = '[ $symbol$environment ]($style)'
+ignore_base = false
+
+[python]
+symbol = ' '
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+pyenv_version_name = false
+style = 'fg:#1a1b26 bg:#9ece6a'
+
+[direnv]
+format = '[$symbol$allowed]($style) '
+style = "bold fg:#1a1b26 bg:#cba6f7"
+disabled = false
+
+[character]
+success_symbol = '[❯](bold #9ece6a)'
+error_symbol = '[❯](bold red)'
+
+[cmd_duration]
+min_time = 1
+style = 'fg:#e0af68'
+format = "[   $duration]($style)"
+
+[lua]
+symbol = ""
+format = '[  $symbol $version](blue)'
 
 [rust]
 symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+format = '[  $symbol $version](red)'
 
 [golang]
 symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+format = '[  $symbol $version](blue)'
 
-[php]
-symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+[nodejs]
+symbol = ""
+format = '[  $symbol $version](green)'
 
-[python]
-symbol = " "
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-pyenv_version_name = true
+# [kubernetes]
+# format = 'on [⛵ ($user on )($cluster in )$context \($namespace\)](dimmed green) '
+# disabled = false
+# contexts = [
+#     { context_pattern = "dev.local.cluster.k8s", style = "green", symbol = "💔 " },
+# ]
 
 [time]
 disabled = false
-time_format = "%R" # Hour:Minute Format
-style = "bg:#1d2230"
-format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
-
-# ~/.config/starship.toml
-
-[kubernetes]
-format = 'on [⛵ ($user on )($cluster in )$context \($namespace\)](dimmed green) '
-disabled = false
-contexts = [
-  { context_pattern = "dev.local.cluster.k8s", style = "green", symbol = "💔 " },
-]
-
+style = 'fg:#73daca'
+format = '[   $time]($style)'
+time_format = '%T'
+utc_time_offset = '+9'

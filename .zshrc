@@ -22,6 +22,7 @@ alias dive="docker run -ti --rm  -v /var/run/docker.sock:/var/run/docker.sock wa
 alias d='docker'
 alias c='docker compose'
 
+# python rye
 source "$HOME/.rye/env"
 
 export VOLTA_HOME="$HOME/.volta"
@@ -41,5 +42,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+# rust cargo
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+
