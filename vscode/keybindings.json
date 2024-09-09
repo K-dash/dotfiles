@@ -56,12 +56,12 @@
     },
     // ターミナル切り替え
     {
-        "key": "ctrl+k",
+        "key": "ctrl+n",
         "command": "workbench.action.terminal.toggleTerminal",
         "when": "!terminalFocus && vim.mode != 'SearchInProgressMode'"
     },
     {
-        "key": "ctrl+k",
+        "key": "ctrl+n",
         "command": "workbench.action.terminal.toggleTerminal",
         "when": "terminalFocus && vim.mode != 'SearchInProgressMode'"
     },

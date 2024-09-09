@@ -550,7 +550,8 @@
     "editorIndentGuide.activeBackground4": "#fff",
     "editorIndentGuide.activeBackground5": "#fff",
     "editorIndentGuide.activeBackground6": "#fff",
-    "terminalCursor.foreground": "#00ffaa"
+    "terminalCursor.foreground": "#00ffaa",
+    "tree.indentGuidesStroke": "#05ef3c"
   },
   "indentRainbow.colors": [
     "rgba( 32,  64, 128, 0.3)", // 青
@@ -611,7 +612,8 @@
   "editor.inlineSuggest.suppressSuggestions": true,
   "cody.commandCodeLenses": true,
   "files.associations": {
-    ".env*": "dotenv"
+    ".env*": "dotenv",
+    "*.css": "postcss"
   },
   "editor.tokenColorCustomizations": {
     "textMateRules": [
@@ -633,7 +635,29 @@
   "remote.autoForwardPortsSource": "hybrid",
   "gitlens.ai.experimental.model": "openai:gpt-4o",
   "gitlens.graph.layout": "editor",
-  "gitlens.experimental.generateCommitMessagePrompt": "Semantic Commit MessageおよびCommit Message Guidelineに従い、コミットメッセージを作成してください。{{1行目の接頭辞のみ英語、それ以外（変更のサマリと2行目以降の変更内容）は日本語で出力してください。}}",
+  "gitlens.experimental.generateCommitMessagePrompt": "Semantic Commit MessageおよびCommit Message Guidelineに従い、コミットメッセージを作成してください。{{1行目の接頭辞およびサマリは英語、それ以外（2行目以降の変更内容）は日本語で出力してください。}} 文末には適切なブランチ名を出力してください。",
   "playwright.showTrace": false,
-  "playwright.reuseBrowser": true
+  "playwright.reuseBrowser": true,
+  "snyk.yesWelcomeNotification": false,
+  "snyk.folderConfigs": [
+    {
+      "folderPath": "/Users/kikuchiyuuki/dotfiles",
+      "baseBranch": "main",
+      "localBranches": [
+        "main"
+      ]
+    }
+  ],
+  "snyk.advanced.cliPath": "/Users/kikuchiyuuki/Library/Application Support/snyk-ls/snyk-macos-arm64",
+  "snyk.trustedFolders": [
+    "/Users/kikuchiyuuki/develop/flake8-import-guard",
+    "/Users/kikuchiyuuki/develop/flake8-import-guard",
+    "/Users/kikuchiyuuki/develop/apache-airflow-test",
+    "/Users/kikuchiyuuki/develop/excel-form-extract-tools",
+    "/Users/kikuchiyuuki/develop/test-azure-function",
+    "/Users/kikuchiyuuki/dotfiles"
+  ],
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
